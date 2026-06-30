@@ -5,8 +5,6 @@ import org.example.model.*;
 import org.example.shelter.Shelter;
 import org.example.utilities.CollectionUtilities;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
@@ -73,15 +71,13 @@ public class ConsoleMenu {
                     }
 
                     break;
-
                 case 2:
                     printHelper(shelter.getAllAnimals());
                     System.out.println("----------------------------");
 
                     break;
-
                 case 3:
-                    System.out.println("What specie are we looking for? Bird, Cat, Dog or Zebra? ");
+                    System.out.println("What species are we looking for? Bird, Cat, Dog or Zebra? ");
                     String specie = scanner.nextLine().trim().toLowerCase();
 
                     try{
@@ -102,7 +98,6 @@ public class ConsoleMenu {
                     }
 
                     break;
-
                 case 4:
                     List<Animal> result = shelter.findAvailableAnimals();
 
@@ -116,7 +111,6 @@ public class ConsoleMenu {
                     System.out.println("----------------------------");
 
                     break;
-
                 case 5:
                     System.out.println("Please enter animalId that got adopted: ");
                     String id = scanner.nextLine().trim();
@@ -135,7 +129,6 @@ public class ConsoleMenu {
                     }
 
                     break;
-
                 case 6:
                     printHelper(sortByAge(shelter.getAllAnimals()));
                     System.out.println("----------------------------");
@@ -151,6 +144,8 @@ public class ConsoleMenu {
 
                     if(adoptionHistories.isEmpty()){
                         System.out.println("No histories found");
+                        System.out.println("----------------------------");
+
                         break;
                     }
 

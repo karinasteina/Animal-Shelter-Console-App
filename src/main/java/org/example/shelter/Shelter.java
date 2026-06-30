@@ -7,24 +7,21 @@ import org.example.model.Animal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Shelter <T extends Animal>{
     private final List<T> animals = new ArrayList<>();
     private final List<AdoptionHistory> adoptionHistories = new ArrayList<>();
-
 
     public void addAnimal(T animal){
         animals.add(animal);
     }
 
     public List<T> getAllAnimals(){
-
-        return animals;
+        return new ArrayList<>(animals);
     }
 
     public List<T> findBySpecies(String species) throws Exception{
-        if(species == null){
+        if(species == null || species.isBlank()){
             throw new Exception("Incorrect params");
         }
 
@@ -55,6 +52,7 @@ public class Shelter <T extends Animal>{
         if(id == null || adoptersName == null || adoptersName.isBlank()){
             throw new Exception("Incorrect params");
         }
+
         for(T animal: animals){
             if(animal.getId().toString().equals(id)){
                 animal.markAsAdopted();
@@ -64,6 +62,6 @@ public class Shelter <T extends Animal>{
     }
 
     public List<AdoptionHistory> getAdoptionHistory(){
-        return adoptionHistories;
+        return new ArrayList<>(adoptionHistories);
     }
 }

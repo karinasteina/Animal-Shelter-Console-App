@@ -146,6 +146,21 @@ public class ConsoleMenu {
                     System.out.println("----------------------------");
 
                     break;
+                case 10:
+                    System.out.println("Oldest animal is: " + collectionUtilities.findOldest(shelter.getAllAnimals()));
+                    System.out.println("----------------------------");
+
+                    break;
+                case 11:
+                    System.out.println("Count by species: " + collectionUtilities.countBySpecies(shelter.getAllAnimals()));
+                    System.out.println("----------------------------");
+
+                    break;
+                case 12:
+                    System.out.println("Average age: " + collectionUtilities.getAgeAvg(shelter.getAllAnimals()));
+                    System.out.println("----------------------------");
+
+                    break;
                 case 0:
                     return;
                 default:
@@ -167,6 +182,9 @@ public class ConsoleMenu {
                 7. Sort animals by name
                 8. Get adoption history
                 9. Filter young animals
+                10. Find oldest animal
+                11. Count by species
+                12. Get average age
                 0. Exit
                 """);
     }

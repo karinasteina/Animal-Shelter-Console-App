@@ -37,10 +37,10 @@ src
     └── Shelter.java
 ```
 ## Stretch goals
-- Add a new animal type without modifying existing functionality
+- Add a new animal type without modifying existing functionality - added a new animal type model, but not sure if that's what was meant
 - Allow sorting animals by age or name - DONE
 - Validate user input (no empty names, age cannot be negative etc.) - DONE
-- Create a generic utility class for searching and filtering collections (Average animal age, Oldest animal, Number of animals of each species etc.)
+- Create a generic utility class for searching and filtering collections (Average animal age, Oldest animal, Number of animals of each species etc.) - DONE
 - Add adoption history that tracks: - DONE
     - Animal
     - Adoption Date

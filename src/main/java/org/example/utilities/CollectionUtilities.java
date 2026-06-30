@@ -1,6 +1,5 @@
 package org.example.utilities;
 
-
 import org.example.filter.FilterCriteria;
 import org.example.model.Animal;
 
@@ -15,6 +14,7 @@ public final class CollectionUtilities{
                 results.add(obj);
             }
         }
+
         return results;
     }
 
@@ -44,6 +44,7 @@ public final class CollectionUtilities{
             }
 
         }
+
         return counts;
     }
 
@@ -54,6 +55,7 @@ public final class CollectionUtilities{
             result += obj.getAge();
 
         }
+
         return result / objects.size();
     }
 

@@ -5,6 +5,8 @@ import org.example.model.*;
 import org.example.shelter.Shelter;
 import org.example.utilities.CollectionUtilities;
 
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +15,21 @@ public class ConsoleMenu {
     private final Shelter<Animal> shelter;
     private final Scanner scanner =  new Scanner(System.in);
     private final CollectionUtilities collectionUtilities = new CollectionUtilities();
+    private final List<MenuOption> menuOptions = List.of(
+            new MenuOption(1, "Add animal"),
+            new MenuOption(2, "List all animals"),
+            new MenuOption(3, "Find animals by species"),
+            new MenuOption(4, "List available animals"),
+            new MenuOption(5, "Mark animal as adopted"),
+            new MenuOption(6, "Sort animals by age"),
+            new MenuOption(7, "Sort animals by name"),
+            new MenuOption(8, "Get adoption history"),
+            new MenuOption(9, "Filter young animals"),
+            new MenuOption(10, "Find oldest animal"),
+            new MenuOption(11, "Count by species"),
+            new MenuOption(12, "Get average age"),
+            new MenuOption(0, "Exit")
+    );
 
     public ConsoleMenu(Shelter<Animal> shelter) {
         this.shelter = shelter;
@@ -172,21 +189,9 @@ public class ConsoleMenu {
     }
 
     private void printMenu(){
-        System.out.println("""
-                1. Add animal
-                2. List all animals
-                3. Find animals by species
-                4. List available animals
-                5. Mark animal as adopted
-                6. Sort animals by age
-                7. Sort animals by name
-                8. Get adoption history
-                9. Filter young animals
-                10. Find oldest animal
-                11. Count by species
-                12. Get average age
-                0. Exit
-                """);
+      for (MenuOption option : menuOptions){
+          System.out.println(option.number() + ". " + option.label());
+      }
     }
 
     private Animal createAnimalHelper(String choice, String name, int age) throws Exception{

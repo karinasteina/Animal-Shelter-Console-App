@@ -1,7 +1,9 @@
 package org.example.menu;
 
+import org.example.filter.impl.YoungAnimalFilter;
 import org.example.model.*;
 import org.example.shelter.Shelter;
+import org.example.utilities.CollectionUtilities;
 
 import java.util.Comparator;
 import java.util.List;
@@ -10,6 +12,8 @@ import java.util.Scanner;
 public class ConsoleMenu {
     private final Shelter<Animal> shelter;
     private final Scanner scanner =  new Scanner(System.in);
+    private final CollectionUtilities collectionUtilities = new CollectionUtilities();
+
     public ConsoleMenu(Shelter<Animal> shelter) {
         this.shelter = shelter;
     }
@@ -137,6 +141,26 @@ public class ConsoleMenu {
                     System.out.println("----------------------------");
 
                     break;
+                case 9:
+                    printHelper(collectionUtilities.find(shelter.getAllAnimals(), new YoungAnimalFilter()));
+                    System.out.println("----------------------------");
+
+                    break;
+                case 10:
+                    System.out.println("Oldest animal is: " + collectionUtilities.findOldest(shelter.getAllAnimals()));
+                    System.out.println("----------------------------");
+
+                    break;
+                case 11:
+                    System.out.println("Count by species: " + collectionUtilities.countBySpecies(shelter.getAllAnimals()));
+                    System.out.println("----------------------------");
+
+                    break;
+                case 12:
+                    System.out.println("Average age: " + collectionUtilities.getAgeAvg(shelter.getAllAnimals()));
+                    System.out.println("----------------------------");
+
+                    break;
                 case 0:
                     return;
                 default:
@@ -157,6 +181,10 @@ public class ConsoleMenu {
                 6. Sort animals by age
                 7. Sort animals by name
                 8. Get adoption history
+                9. Filter young animals
+                10. Find oldest animal
+                11. Count by species
+                12. Get average age
                 0. Exit
                 """);
     }

@@ -4,20 +4,20 @@ Starter project for M3A practical task: Create a simple Java console application
 
 ## Task
 Complete all of the 'TODO' portions of the code. Finished application should support:
-- Adding a new animal
-- Listing all animals
-- Searching animals by species
-- Marking an animal as adopted
-- Displaying only available animals
+- Adding a new animal - DONE
+- Listing all animals - DONE
+- Searching animals by species - DONE
+- Marking an animal as adopted - DONE
+- Displaying only available animals - DONE
 
 ## OOP Requirements
-- Class anatomy: fields, constructors, methods
-- Object isntantiation and usage
-- Constructor overloading
-- Immutable class usage (AnimalId)
-- Lombok usage for reducing boilerplate
-- A basic sealed class hierarchy
-- Generic (Shelter<T>) class that stores animals
+- Class anatomy: fields, constructors, methods - DONE
+- Object instantiation and usage - DONE
+- Constructor overloading - DONE
+- Immutable class usage (AnimalId) - DONE
+- Lombok usage for reducing boilerplate - DONE
+- A basic sealed class hierarchy - DONE
+- Generic (Shelter<T>) class that stores animals - DONE
 
 ## Project Structure
 ``` text
@@ -38,10 +38,10 @@ src
 ```
 ## Stretch goals
 - Add a new animal type without modifying existing functionality
-- Allow sorting animals by age or name
-- Validate user input (no empty names, age cannot be negative etc.)
+- Allow sorting animals by age or name - DONE
+- Validate user input (no empty names, age cannot be negative etc.) - DONE
 - Create a generic utility class for searching and filtering collections (Average animal age, Oldest animal, Number of animals of each species etc.)
-- Add adoption history that tracks:
+- Add adoption history that tracks: - DONE
     - Animal
     - Adoption Date
     - Adopter Name
